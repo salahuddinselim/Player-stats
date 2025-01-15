@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Statistics</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="css/colors.css">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- end font family -->
+    <link rel="stylesheet" href="css/3dslider.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="js/3dslider.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.css">
+    <link rel="stylesheet" href="player_stats.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand me-3" href="index.php">Player Stats</a>
+                <form class="d-flex search-form">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Match
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Upcoming Matches</a></li>
+                            <li><a class="dropdown-item" href="#">Past Matches</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Match Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle profile-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                            <li><a class="dropdown-item" href="edit-profile.html"><i class="fas fa-edit me-2"></i>Edit Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="logout.php"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Rest of the content -->
+    <div class="container-fluid">
+    <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="player-info card">
+                    <div class="card-body">
+                        <div class="profile-photo">
+                            <img id="playerPhoto" src="default-avatar.png" alt="Player Photo">
+                        </div>
+                        <h2 id="playerName" class="card-title">Player Name</h2>
+                        <div class="player-details">
+                            <p><strong>Age:</strong> <span id="playerAge">25</span></p>
+                            <p><strong>Nationality:</strong> <span id="playerNationality">Country</span></p>
+                            <p><strong>Team:</strong> <span id="playerTeam">Team Name</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Stats -->
+            <div class="col-md-8">
+                <div class="stats-container card">
+                    <div class="card-body">
+                        <h3>Season Statistics</h3>
+                        <div class="row stats-grid">
+                            <div class="col-md-3 stat-box">
+                                <h4>Matches</h4>
+                                <p id="matchesPlayed">0</p>
+                            </div>
+                            <div class="col-md-3 stat-box">
+                                <h4>Goals</h4>
+                                <p id="goals">0</p>
+                            </div>
+                            <div class="col-md-3 stat-box">
+                                <h4>Assists</h4>
+                                <p id="assists">0</p>
+                            </div>
+                            <div class="col-md-3 stat-box">
+                                <h4>Rating</h4>
+                                <p id="rating">0.0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Charts -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card chart-card">
+                    <div class="card-body">
+                        <h3>Performance Trend</h3>
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card chart-card">
+                    <div class="card-body">
+                        <h3>Goal Contributions</h3>
+                        <div class="chart-container">
+                            <canvas id="goalContributionsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Matches -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Recent Matches</h3>
+                        <div class="table-responsive">
+                            <table class="table" id="recentMatches">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Tournament</th>
+                                        <th>Opponent</th>
+                                        <th>Result</th>
+                                        <th>Goals</th>
+                                        <th>Assists</th>
+                                        <th>Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dynamically populated -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Milestones -->
+        <div class="row mt-4 mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Career Milestones</h3>
+                        <div id="milestones" class="timeline">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="player_stats.js"></script>
+</body>
+</html>

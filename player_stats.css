@@ -1,0 +1,415 @@
+/* Global Color Palette */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f4f6f7;
+    --text-color: #2c3e50;
+    --card-background: #ffffff;
+    --hover-color: #34495e;
+}
+
+/* Reset and Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container-fluid {
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--card-background);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Player Info Styles */
+.player-info {
+    text-align: center;
+}
+
+.profile-photo {
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+}
+
+.player-details p {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.stat-box {
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.stat-box:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.stat-box h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.stat-box p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Chart Styles */
+.chart-card .chart-container {
+    position: relative;
+    height: 300px;
+}
+
+/* Recent Matches Table */
+.table {
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.table thead th {
+    border: none;
+    font-weight: 600;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* Career Milestones Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 100%;
+    width: 2px;
+    background-color: var(--secondary-color);
+}
+
+/* Navbar Styles - Enhanced Responsiveness */
+.navbar {
+    background-color: var(--card-background) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 2rem; /* Increased brand font size */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.navbar-toggler {
+    font-size: 1.5rem; /* Larger toggle button */
+}
+
+.navbar-toggler-icon {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+/* Search Form Styles */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.search-form .form-control {
+    width: 250px;
+    margin-right: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    border-color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.search-form .btn-outline-primary {
+    font-size: 1rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.search-form .form-control:focus,
+.search-form .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.search-form .btn-outline-primary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .search-form .form-control {
+        width: 200px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar .d-flex.align-items-center {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-form {
+        margin-left: 0;
+        margin-bottom: 15px;
+        flex-direction: column;
+    }
+
+    .search-form .form-control,
+    .search-form .btn-outline-primary {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    font-size: 1.1rem;
+    min-width: 250px; /* Wider dropdown */
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.nav-item.dropdown .nav-link:hover .profile-icon {
+    color: var(--secondary-color);
+}
+
+.dropdown-menu.dropdown-menu-end {
+    right: 0;
+    left: auto;
+    min-width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--secondary-color);
+}
+
+.dropdown-menu .dropdown-item.text-danger:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.dropdown-menu .dropdown-item.text-danger i {
+    color: #e74c3c;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .navbar-nav .nav-link {
+        margin: 0 10px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar .container-fluid {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navbar-brand {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 10px 0;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .navbar-collapse {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .navbar .form-control,
+    .navbar .btn-outline-primary {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        margin-top: 10px;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .profile-icon {
+        font-size: 1.8rem;
+    }
+
+    .dropdown-menu.dropdown-menu-end {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+    }
+
+    .navbar .form-control,
+    .navbar .btn-outline-primary {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .stats-grid {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        margin-bottom: 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}

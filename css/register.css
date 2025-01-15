@@ -1,0 +1,187 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Updated font family */
+    background-color: #000;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px; /* Adjusted padding to match password box */
+    border: 1px solid #ccc; /* Changed border color to match input fields */
+    border-radius: 5px; /* Consistent border radius */
+    width: 100%; /* Make input full width */
+}
+
+.search-bar button {
+    padding: 10px; /* Adjusted padding to match password box */
+    background: red;
+    border: none;
+    color: white;
+    border-radius: 5px; /* Consistent border radius */
+    cursor: pointer;
+}
+
+/* Main content */
+.container {
+    display: flex;
+    height: 90vh;
+}
+
+.image-section {
+    flex: 1;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Reduced height */
+    overflow: hidden; /* Ensures image doesn't spill over */
+    margin-top: 10px; /* Adds spacing below the navbar */
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1px;
+    max-height: 500px; /* Restricts image height */
+    object-fit: contain; /* Ensures the image is contained within the section */
+}
+
+.form-section {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.form-section p {
+    margin-bottom: 20px;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-section form input {
+    margin-bottom: 15px;
+    padding: 15px; /* Increased padding for larger input boxes */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Increased font size for placeholders */
+    color: #000; /* Added to make text visible */
+    background-color: #fff; /* Added to make input background white */
+    width: 100%; /* Full width */
+}
+
+.password-group {
+    position: relative;
+    width: 100%; /* Make password group responsive */
+}
+
+.password-group input {
+    width: calc(100% - 40px); /* Adjust width for toggle icon */
+}
+
+.form-section form button {
+    padding: 15px; /* Increased padding for larger buttons */
+    margin-bottom: 15px;
+    background-color: #0f0f0f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem; /* Increased font size for buttons */
+}
+
+.form-section form button:hover {
+    background-color: #322f3a;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem; /* Increased font size for toggle icon */
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem; /* Increased font size for social icons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image-section {
+        display: none;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .password-group input {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .form-section form input,
+    .form-section form button {
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+        padding: 12px; /* Adjusted padding for smaller screens */
+    }
+
+    .toggle-password {
+        font-size: 1.2rem; /* Adjusted font size for toggle icon on smaller screens */
+    }
+}

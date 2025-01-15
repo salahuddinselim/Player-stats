@@ -1,0 +1,203 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('images/loading-img.gif') no-repeat center center fixed; /* Updated image path */
+    background-size: cover;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9); /* Darker background for better visibility */
+    color: #fff;
+    padding: 15px 30px;
+}
+
+.navbar .logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo-section h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ffcc00;
+}
+
+.navbar .menu-section ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar .menu-section ul li a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85); /* Slightly darker for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #555; /* Darker background for profile picture */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.profile-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Added text shadow for depth */
+}
+
+.profile-header p {
+    font-size: 1.2rem;
+    color: #ccc;
+    font-style: italic; /* Italic style for a creative touch */
+}
+
+.profile-header button {
+    padding: 10px 20px;
+    background: #ff5733; /* Updated button color */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s; /* Added transform for button effect */
+}
+
+.profile-header button:hover {
+    background: #c70039; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 20px;
+}
+
+.profile-stats .stat {
+    text-align: center;
+}
+
+.profile-stats .stat h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #ffcc00; /* Highlight stat titles */
+}
+
+.profile-stats .stat p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.profile-info, .recent-activity {
+    margin-bottom: 20px;
+}
+
+.profile-info h3, .recent-activity h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    text-transform: uppercase; /* Uppercase for section titles */
+}
+
+.profile-info p, .recent-activity p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    background: #007bff; /* Updated button color */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.actions button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* New Button Style */
+.actions .new-button {
+    background: #ffc107; /* Yellow background for new button */
+}
+
+.actions .new-button:hover {
+    background: #e0a800; /* Darker yellow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-container {
+        padding: 10px;
+    }
+
+    .profile-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-stats .stat {
+        margin-bottom: 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        margin-bottom: 10px;
+    }
+}

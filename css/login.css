@@ -1,0 +1,183 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Updated font family */
+    background-color: #000;
+    color: #fff;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#preloader .preloader {
+    width: 100px;
+    height: 100px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.9); /* Darker background */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px; /* Increased padding for larger input box */
+    border: 1px solid #ccc; /* Changed border color */
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem; /* Increased font size */
+}
+
+.search-bar button {
+    padding: 10px; /* Increased padding for larger button */
+    background: #007bff; /* Updated button color */
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1rem; /* Increased font size */
+}
+
+/* Main content */
+.container {
+    display: flex;
+    height: 90vh;
+}
+
+.image-section {
+    flex: 1;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Ensures image doesn't spill over */
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1px;
+    max-height: 100vh; /* Restricts image height */
+    object-fit: contain; /* Ensures the image is contained within the section */
+}
+
+.form-section {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.form-section p {
+    margin-bottom: 20px;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-section form input {
+    margin-bottom: 15px;
+    padding: 15px; /* Increased padding for larger input boxes */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2rem; /* Increased font size for placeholders */
+    color: #000; /* Added to make text visible */
+    background-color: #fff; /* Added to make input background white */
+    width: 100%; /* Full width */
+}
+
+.form-section form button {
+    padding: 15px; /* Increased padding for larger buttons */
+    margin-bottom: 15px;
+    background-color: #0e0d0d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem; /* Increased font size for buttons */
+}
+
+.form-section form button:hover {
+    background-color: #322f3a;
+}
+
+.password-group {
+    position: relative;
+    width: 100%; /* Make password group responsive */
+}
+
+.password-group input {
+    width: calc(100% - 40px); /* Adjust width for toggle icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem; /* Increased font size for toggle icon */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #c2b9b9;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
