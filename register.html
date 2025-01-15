@@ -40,9 +40,11 @@
                 </div>
                 <div class="mb-3">
                     <input type="text" class="form-control" name="username" 
-                           placeholder="Username" required 
+                           placeholder="Username" required id="usernameInput"
                            pattern="^[a-zA-Z0-9_]{3,20}$"
-                           title="Username must be 3-20 characters, alphanumeric or underscore">
+                           title="Username must be 3-20 characters, alphanumeric or underscore"
+                           oninput="checkUsernameAvailability()">
+                    <div id="usernameAvailability" class="form-text"></div>
                 </div>
                 <div class="mb-3 password-container">
                     <input type="password" class="form-control" name="password" 

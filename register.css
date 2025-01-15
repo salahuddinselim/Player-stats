@@ -189,3 +189,14 @@ body, html {
         font-size: 20px;
     }
 }
+
+#usernameAvailability {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+#usernameAvailability span {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
